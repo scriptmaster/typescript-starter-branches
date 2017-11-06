@@ -9,7 +9,7 @@ cp.execSync('rm -rf node_modules', { stdio: 'inherit' })
 let modules = Object.keys(package.dependencies).join(' ') + ' ' +
 			Object.keys(package.devDependencies).join(' ');
 
-let cmd = 'npm install -g ' + modules
+let cmd = 'yarn global add ' + modules
 // let cmd = 'npm install -g ' + modules
 
 console.log('\n\n' + cmd + '\n\n');

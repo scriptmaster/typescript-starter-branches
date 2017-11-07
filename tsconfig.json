@@ -1,9 +1,35 @@
 {
   "compilerOptions": {
-    "target": "ESNEXT",
-    "module": "commonjs",
+
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": false,
+
+    // "target": "ESNEXT",
+    // "module": "commonjs",
+
     "strict": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+
+  "awesomeTypescriptLoaderOptions": {
+    "transpileOnly": true
+  },
+
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts"
+  ]
 }

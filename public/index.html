@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Progressive Web App</title>
 
-	<style> body.boot-or-bundle-loading #root { display: none; } body.boot-or-bundle-loading { background: #0e0e0e; position: fixed; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; } body.boot-or-bundle-loading #boot-or-bundle-loader { display: block; } #boot-or-bundle-loader { display:none; border: 16px solid #f3f3f3; border-radius: 50%; border-top: 16px solid blue; border-right: 16px solid green; border-bottom: 16px solid red; border-left: 16px solid yellow; width: 120px; height: 120px; -webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite; } @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } } @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } </style>
+	<style> #bundle-loading-spinner { background: #ccc; position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; } body.boot-or-bundle-loading #bundle-loading-spinner { display: block; } #bundle-loading-spinner::after { content: ' '; border: 16px solid #f3f3f3; border-radius: 50%; border-top: 16px solid blue; border-right: 16px solid green; border-bottom: 16px solid red; border-left: 16px solid yellow; width: 120px; height: 120px; -webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite; } @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } } @keyframes spin { 0% { opacity: 1; transform: rotate(0deg); } 50% { opacity: 0; } 100% { transform: rotate(360deg); opacity: 1; } } .fade-out { animation: fadeOut 0.5s linear; } @keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } } </style>
 
-    <link rel="stylesheet" href="/bootswatch-4-lumen-bootstrap.min.css" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" data-href="/styles.css" />
 
 </head>
-<body class="boot-or-bundle-loading">
+<body>
 
-	<div id="boot-or-bundle-loader"></div>
+	<div id="bundle-loading-spinner"></div>
 
 	<div id="root"></div>
 

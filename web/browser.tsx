@@ -3,10 +3,11 @@ import { render } from "react-dom";
 
 import App from "../react/web/AppComponent";
 
+import HideBundleLoadingSpinner from './HideBundleLoadingSpinner'
 
 let props = { origin: "Browser" };
 
 // render(<App {...props} />, document.getElementById('root'));
-render(<div>Hello BrowserSync, fast !<App { ... props} /></div>, document.getElementById('root'));
+render(<div>Hello BrowserSync, fast: <App { ...props} /></div>, document.getElementById('root'));
 
-setTimeout(() => { document.body.classList.remove('boot-or-bundle-loading') }, 1000);
+new HideBundleLoadingSpinner();
